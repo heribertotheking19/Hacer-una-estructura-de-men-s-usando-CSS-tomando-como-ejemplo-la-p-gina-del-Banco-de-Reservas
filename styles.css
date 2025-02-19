@@ -1,0 +1,135 @@
+/* Reiniciar márgenes y agregar fuente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+}
+
+/* Estilos generales */
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Agregar espacio para evitar que el menú tape el contenido */
+main {
+    padding-top: 80px;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menú de navegación */
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+/* Estilos de los enlaces */
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Cambio de color al pasar el mouse */
+.menu a:hover {
+    background-color: #0055a5;
+}
+
+/* Submenú */
+.submenu .dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submenu .dropdown li {
+    border-bottom: 1px solid #ddd;
+}
+
+.submenu .dropdown a {
+    color: #003366;
+    padding: 10px;
+    display: block;
+}
+
+/* Mostrar submenú al pasar el mouse */
+.submenu:hover .dropdown {
+    display: block;
+}
+
+/* Secciones */
+.contenido, .servicio, .contacto {
+    padding: 50px;
+    background: white;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contacto */
+.contacto {
+    background: #003366;
+    color: white;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .submenu .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .submenu:hover .dropdown {
+        display: block;
+    }
+}
